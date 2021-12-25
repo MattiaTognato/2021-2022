@@ -1,0 +1,21 @@
+C:\Users\6190097\source\repos\Riproduttore musicale queue\Riproduttore musicale queue\bin\Debug\Riproduttore musicale queue.exe.config
+C:\Users\6190097\source\repos\Riproduttore musicale queue\Riproduttore musicale queue\bin\Debug\Riproduttore musicale queue.exe
+C:\Users\6190097\source\repos\Riproduttore musicale queue\Riproduttore musicale queue\bin\Debug\Riproduttore musicale queue.pdb
+C:\Users\6190097\source\repos\Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.csproj.AssemblyReference.cache
+C:\Users\6190097\source\repos\Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore_musicale_queue.Form1.resources
+C:\Users\6190097\source\repos\Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore_musicale_queue.Properties.Resources.resources
+C:\Users\6190097\source\repos\Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.csproj.GenerateResource.cache
+C:\Users\6190097\source\repos\Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.csproj.CoreCompileInputs.cache
+C:\Users\6190097\source\repos\Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.exe
+C:\Users\6190097\source\repos\Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.pdb
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\bin\Debug\Riproduttore musicale queue.exe.config
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\bin\Debug\Riproduttore musicale queue.exe
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\bin\Debug\Riproduttore musicale queue.pdb
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.csproj.AssemblyReference.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.csproj.SuggestedBindingRedirects.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore_musicale_queue.Form1.resources
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore_musicale_queue.Properties.Resources.resources
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.csproj.GenerateResource.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.csproj.CoreCompileInputs.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.exe
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\7. Riproduttore musicale queue\Riproduttore musicale queue\obj\Debug\Riproduttore musicale queue.pdb

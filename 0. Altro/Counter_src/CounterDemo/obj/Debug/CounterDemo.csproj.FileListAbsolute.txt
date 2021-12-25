@@ -1,0 +1,11 @@
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\bin\Debug\CounterDemo.exe
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\bin\Debug\CounterDemo.pdb
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\bin\Debug\CounterLib.dll
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\bin\Debug\CounterLib.pdb
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\obj\Debug\CounterDemo.csprojAssemblyReference.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\obj\Debug\CounterDemo.Form1.resources
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\obj\Debug\CounterDemo.csproj.GenerateResource.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\obj\Debug\CounterDemo.csproj.CoreCompileInputs.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\obj\Debug\CounterDemo.csproj.CopyComplete
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\obj\Debug\CounterDemo.exe
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\CounterDemo\obj\Debug\CounterDemo.pdb

@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterDemo", "CounterDemo.csproj", "{C93CB89C-C0ED-4AFF-B0D2-EFB31A6F7E17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterLib", "..\Counter\CounterLib.csproj", "{1EF17CE6-85FF-4A52-95DA-4D834927B10D}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C93CB89C-C0ED-4AFF-B0D2-EFB31A6F7E17}.Debug.ActiveCfg = Debug|.NET
+		{C93CB89C-C0ED-4AFF-B0D2-EFB31A6F7E17}.Debug.Build.0 = Debug|.NET
+		{C93CB89C-C0ED-4AFF-B0D2-EFB31A6F7E17}.Release.ActiveCfg = Release|.NET
+		{C93CB89C-C0ED-4AFF-B0D2-EFB31A6F7E17}.Release.Build.0 = Release|.NET
+		{1EF17CE6-85FF-4A52-95DA-4D834927B10D}.Debug.ActiveCfg = Debug|.NET
+		{1EF17CE6-85FF-4A52-95DA-4D834927B10D}.Debug.Build.0 = Debug|.NET
+		{1EF17CE6-85FF-4A52-95DA-4D834927B10D}.Release.ActiveCfg = Release|.NET
+		{1EF17CE6-85FF-4A52-95DA-4D834927B10D}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f6f38d7b-ff71-483f-8860-ff5a11a0deac": {
+      "ProjectGuid": "f6f38d7b-ff71-483f-8860-ff5a11a0deac",
+      "DisplayName": "Riproduttore musicale queue",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

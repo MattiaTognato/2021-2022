@@ -1,0 +1,8 @@
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\Counter\bin\Debug\CounterLib.dll
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\Counter\bin\Debug\CounterLib.pdb
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\Counter\obj\Debug\CounterLib.csprojAssemblyReference.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\Counter\obj\Debug\CounterLib.Counter.resources
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\Counter\obj\Debug\CounterLib.csproj.GenerateResource.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\Counter\obj\Debug\CounterLib.csproj.CoreCompileInputs.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\Counter\obj\Debug\CounterLib.dll
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\0. Altro\Counter_src\Counter\obj\Debug\CounterLib.pdb
