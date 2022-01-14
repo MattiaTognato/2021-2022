@@ -520,119 +520,172 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"9Rlze":[function(require,module,exports) {
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 var Block_1 = require("./Block");
-var griglia_1 = require("./griglia");
+var grid_1 = require("./grid");
+var gridMoving_1 = require("./gridMoving");
 var grid;
+var gridMoving;
 var col = 20;
 var row = 10;
-var widthCell = 30;
+var wCell = 30;
+var timerAuto = 0;
+var timerLR = 0;
+var timerDown = 0;
+var keyProgressionLR = 0;
 globalThis.setup = function() {
-    createCanvas(row * widthCell, col * widthCell);
-    grid = new griglia_1.Griglia(col, row, widthCell);
-    grid.addBlock(new Block_1.Block(0, width / 2 / widthCell, widthCell));
-    frameRate(1);
-    while(grid.griglia.length < 1);
+    createCanvas(row * wCell, col * wCell);
+    grid = new grid_1.Grid(col, row, wCell);
+    gridMoving = new gridMoving_1.GridMoving(grid, col, row, wCell);
+    gridMoving.addBlock(new Block_1.Block(Math.floor(Math.random() * 7), width / 2 / wCell, wCell));
+    background(33, 66, 115);
+    grid.show();
+    gridMoving.show();
 };
 globalThis.draw = function() {
     background(33, 66, 115);
-    grid.show();
-};
-globalThis.keyPressed = function() {
-    console.log(key);
-};
-
-},{"./griglia":"g2rge","./Block":"ecSgA"}],"g2rge":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports.Griglia = void 0;
-var Griglia = function() {
-    function Griglia1(col, row, wCell) {
-        this.griglia = new Array(row);
-        for(var i = 0; i < this.griglia.length; i++)this.griglia[i] = new Array(col);
-        this.wCell = wCell;
-        this.col = col;
-        this.row = row;
+    if (millis() >= 1000 + timerAuto) {
+        moveDown(); //Ogni secondo sposta il blocchetto in giù
+        timerAuto = millis();
     }
-    Griglia1.prototype.show = function() {
-        for(var i = this.row - 1; i >= 0; i--){
-            for(var j = this.col - 1; j >= 0; j--)if (this.griglia[i][j] == undefined) {
-                stroke(148, 140, 117);
-                noFill();
-                strokeWeight(1);
-                rect(i * this.wCell, j * this.wCell, this.wCell, this.wCell); //se non c'è niente disegna il quadratino
-            } else {
-                if (this.griglia[i][j].moving != false) this.updateCell(this.griglia[i][j]);
-                fill(116, 173, 0);
-                rect(i * this.wCell, j * this.wCell, this.wCell, this.wCell);
-            }
+    if (keyIsDown(RIGHT_ARROW)) {
+        if (keyProgressionLR < 2 && millis() >= 100 + timerLR) {
+            gridMoving.moveBlock("right");
+            keyProgressionLR++;
+            timerLR = millis();
+        } else if (keyProgressionLR == 2 && millis() >= 50 + timerLR) {
+            gridMoving.moveBlock("right");
+            timerLR = millis();
         }
-    //this.updateGrid();
-    };
-    Griglia1.prototype.addBlock = function(block) {
-        this.blockMoving = block;
-        for(var i = 0; i < block.cells.length; i++){
-            var cell = block.cells[i];
-            this.griglia[cell.x / this.wCell][cell.y / this.wCell] = cell;
+    } else if (keyIsDown(LEFT_ARROW)) {
+        if (keyProgressionLR < 2 && millis() >= 150 + timerLR) {
+            gridMoving.moveBlock("left");
+            keyProgressionLR++;
+            timerLR = millis();
+        } else if (keyProgressionLR == 2 && millis() >= 50 + timerLR) {
+            gridMoving.moveBlock("left");
+            timerLR = millis();
         }
-    };
-    Griglia1.prototype.updateGrid = function() {
-        var tmp = this.griglia;
-        this.griglia = new Array(this.row); //nuova griglia
-        for(var i = 0; i < this.griglia.length; i++)this.griglia[i] = new Array(this.col);
-        for(var i = 0; i < this.row; i++){
-            for(var j = 0; j < this.col; j++)if (tmp[i][j] != undefined) this.griglia[tmp[i][j].x / this.wCell][tmp[i][j].y / this.wCell] = tmp[i][j]; //mettila nella griglia nuova nella posizione giusta
+    }
+    if (keyIsDown(DOWN_ARROW)) {
+        if (millis() >= 50 + timerDown) {
+            moveDown();
+            timerDown = millis();
         }
-    };
-    Griglia1.prototype.updateCell = function(cell) {
-        var nextIndex = (cell.y + cell.w) / this.wCell;
-        if (cell.y + cell.w >= height || this.griglia[cell.x / this.wCell][nextIndex] != undefined && this.griglia[cell.x / this.wCell][nextIndex].moving == false) {
-            cell.moving = false;
-            return;
-        }
-        this.griglia[cell.x / this.wCell][cell.y / this.wCell] = null;
-        cell.y += cell.w;
-        this.griglia[cell.x / this.wCell][cell.y / this.wCell] = cell;
-    };
-    Griglia1.prototype.moveBlock = function(n) {
-        for(var i = 0; i < this.blockMoving.cells.length; i++);
-    };
-    return Griglia1;
-}();
-exports.Griglia = Griglia;
+    }
+    grid.show();
+    gridMoving.show();
+};
+function moveDown() {
+    var stoppedBlockAndCreateBlock = gridMoving.movingDown(); // moving down ritorna un blocco quando un un blocco si ferma e dice se creare o no un'altro blocco
+    if (stoppedBlockAndCreateBlock[1] == true && stoppedBlockAndCreateBlock[0] != undefined && stoppedBlockAndCreateBlock[0] != undefined) {
+        grid.addBlock(stoppedBlockAndCreateBlock[0]); // aggiungo il blocco che si è fermato alla griglia dei blocchi fermi
+        gridMoving.addBlock(new Block_1.Block(Math.floor(Math.random() * 7), width / 2 / wCell, wCell)); //aggiungo un nuovo blocco in movimento
+    } else if (stoppedBlockAndCreateBlock[1] == true) gridMoving.addBlock(new Block_1.Block(Math.floor(Math.random() * 7), width / 2 / wCell, wCell)); //aggiungo un blocco in movimento in caso non ce ne siano
+}
+globalThis.keyReleased = function() {
+    if (key == "ArrowLeft") keyProgressionLR = 0;
+    if (key == "ArrowRight") keyProgressionLR = 0;
+};
 
-},{}],"ecSgA":[function(require,module,exports) {
+},{"./Block":"ecSgA","./grid":"l3V1X","./gridMoving":"b9kLz"}],"ecSgA":[function(require,module,exports) {
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 exports.Block = void 0;
 var Cell_1 = require("./Cell");
 var Block = function() {
     function Block1(typeOfBlock, spawnX, wCell) {
         this.cells = [];
+        this.typeOfBlock = typeOfBlock;
         switch(typeOfBlock){
             case 0:
                 for(var i = 0; i < 4; i++)this.cells.push(new Cell_1.Cell(spawnX, i, wCell));
                 break;
             case 1:
                 for(var i = 0; i < 3; i++)this.cells.push(new Cell_1.Cell(spawnX, i, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX - 1, 2, wCell));
+                break;
+            case 2:
+                for(var i = 0; i < 3; i++)this.cells.push(new Cell_1.Cell(spawnX, i, wCell));
                 this.cells.push(new Cell_1.Cell(spawnX + 1, 2, wCell));
                 break;
+            case 3:
+                this.cells.push(new Cell_1.Cell(spawnX, 0, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX, 1, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX + 1, 1, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX + 1, 2, wCell));
+                break;
+            case 4:
+                this.cells.push(new Cell_1.Cell(spawnX + 1, 0, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX + 1, 1, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX, 1, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX, 2, wCell));
+                break;
+            case 5:
+                this.cells.push(new Cell_1.Cell(spawnX - 1, 0, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX, 0, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX + 1, 0, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX, 1, wCell));
+                break;
+            case 6:
+                this.cells.push(new Cell_1.Cell(spawnX + 1, 0, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX, 0, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX + 1, 1, wCell));
+                this.cells.push(new Cell_1.Cell(spawnX, 1, wCell));
+                break;
         }
+        this.moving = true;
     }
+    Object.defineProperty(Block1.prototype, "moving", {
+        get: function() {
+            return this._moving;
+        },
+        set: function(value) {
+            this._moving = value;
+            for(var i = 0; i < this.cells.length; i++)this.cells[i].moving = value; //setta tutte le celle del blocco in movimento con moving = value
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Block1.prototype.getNextIndexOfRotate = function() {
+        switch(this.typeOfBlock){
+            case 0:
+                for(var i = 0; i < this.cells.length; i++);
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+        }
+        return new Array(1);
+    };
     return Block1;
 }();
 exports.Block = Block;
 
 },{"./Cell":"lihGa"}],"lihGa":[function(require,module,exports) {
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 exports.Cell = void 0;
 var Cell = function() {
     function Cell1(x, y, w) {
         this.x = x * w;
         this.y = y * w;
         this.w = w;
-        this.moving = true;
     }
     Cell1.prototype.show = function() {
         fill(0);
@@ -641,6 +694,167 @@ var Cell = function() {
     return Cell1;
 }();
 exports.Cell = Cell;
+
+},{}],"l3V1X":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Grid = void 0;
+var Grid = function() {
+    function Grid1(col, row, wCell) {
+        this.col = col;
+        this.row = row;
+        this.wCell = wCell;
+        this.grid = new Array(row);
+        for(var i = 0; i < this.grid.length; i++)this.grid[i] = new Array(col);
+    }
+    Grid1.prototype.show = function() {
+        for(var i = 0; i < this.row; i++){
+            for(var j = 0; j < this.col; j++)if (this.grid[i][j] != undefined && this.grid[i][j] != null) {
+                noStroke();
+                fill(54, 117, 106);
+                rect(i * this.wCell, j * this.wCell, this.wCell, this.wCell); //se c'è un blocco fermo disegnalo
+            } else {
+                stroke(148, 140, 117);
+                noFill();
+                strokeWeight(1);
+                rect(i * this.wCell, j * this.wCell, this.wCell, this.wCell); //se non c'è niente disegna il quadratino
+            }
+        }
+    };
+    Grid1.prototype.addBlock = function(block) {
+        for(var i = 0; i < block.cells.length; i++){
+            var cell = block.cells[i];
+            this.grid[cell.x / this.wCell][cell.y / this.wCell] = cell;
+        }
+    };
+    return Grid1;
+}();
+exports.Grid = Grid;
+
+},{}],"b9kLz":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.GridMoving = void 0;
+var GridMoving = function() {
+    function GridMoving1(gridBlockStopped, col, row, wCell) {
+        this.col = col;
+        this.row = row;
+        this.wCell = wCell;
+        this.gridBlockStopped = gridBlockStopped;
+        this.gridMoving = new Array(this.row);
+        for(var i = 0; i < this.gridMoving.length; i++)this.gridMoving[i] = new Array(this.col);
+    }
+    GridMoving1.prototype.show = function() {
+        for(var i = 0; i < this.row; i++){
+            for(var j = 0; j < this.col; j++)if (this.gridMoving[i][j] != undefined || this.gridMoving[i][j] != null) this.gridMoving[i][j].show();
+        }
+    };
+    GridMoving1.prototype.addBlock = function(block) {
+        this.blockMoving = block;
+        for(var i = 0; i < block.cells.length; i++){
+            var cell = block.cells[i];
+            this.gridMoving[cell.x / this.wCell][cell.y / this.wCell] = cell;
+        }
+    };
+    GridMoving1.prototype.movingDown = function() {
+        if (this.blockMoving == undefined || this.blockMoving == null) return [
+            null,
+            true
+        ];
+        if (this.checkIfMovableDown(this.blockMoving)) {
+            for(var i = 0; i < this.blockMoving.cells.length; i++){
+                var cell = this.blockMoving.cells[i];
+                this.gridMoving[cell.x / this.wCell][cell.y / this.wCell] = null;
+            }
+            for(var i = 0; i < this.blockMoving.cells.length; i++){
+                var cell = this.blockMoving.cells[i];
+                cell.y += cell.w;
+                this.gridMoving[cell.x / this.wCell][cell.y / this.wCell] = cell;
+            }
+            return [
+                null,
+                false
+            ];
+        } else {
+            this.blockMoving.moving = false;
+            var tmp = this.blockMoving;
+            this.blockMoving = null;
+            return [
+                tmp,
+                true
+            ];
+        }
+    };
+    GridMoving1.prototype.checkIfMovableDown = function(block) {
+        for(var i = 0; i < block.cells.length; i++){
+            var cell = block.cells[i];
+            var nextIndex = (cell.y + cell.w) / this.wCell;
+            if (cell.y + cell.w >= height || this.gridBlockStopped.grid[cell.x / this.wCell][nextIndex] != undefined || this.gridBlockStopped.grid[cell.x / this.wCell][nextIndex] != null) return false;
+        }
+        return true;
+    };
+    GridMoving1.prototype.moveBlock = function(direzione) {
+        if (this.blockMoving == undefined || this.blockMoving == null) return;
+        if (this.checkIfMovableLR(direzione, this.blockMoving)) {
+            for(var i = 0; i < this.blockMoving.cells.length; i++){
+                var cell = this.blockMoving.cells[i];
+                this.gridMoving[cell.x / this.wCell][cell.y / this.wCell] = null;
+            }
+            for(var i = 0; i < this.blockMoving.cells.length; i++){
+                var cell = this.blockMoving.cells[i];
+                if (direzione == "right") cell.x += this.wCell;
+                else if (direzione == "left") cell.x -= this.wCell;
+                this.gridMoving[cell.x / this.wCell][cell.y / this.wCell] = cell;
+            }
+        }
+    };
+    GridMoving1.prototype.checkIfMovableLR = function(direzione, block) {
+        for(var i = 0; i < block.cells.length; i++){
+            var cell = block.cells[i];
+            var nextIndex;
+            if (direzione == "right") {
+                nextIndex = (cell.x + cell.w) / this.wCell;
+                if (nextIndex * this.wCell >= width || this.gridBlockStopped.grid[nextIndex][cell.y / this.wCell] != undefined || this.gridBlockStopped.grid[nextIndex][cell.y / this.wCell] != null) return false;
+            } else if (direzione == "left") {
+                nextIndex = (cell.x - cell.w) / this.wCell;
+                if (nextIndex * this.wCell < 0 || this.gridBlockStopped.grid[nextIndex][cell.y / this.wCell] != undefined || this.gridBlockStopped.grid[nextIndex][cell.y / this.wCell] != null) return false;
+            }
+        }
+        return true;
+    };
+    GridMoving1.prototype.rotateBlock = function() {
+        if (this.blockMoving == undefined || this.blockMoving == null) return;
+        if (this.checkIfRotatable(this.blockMoving)) {
+            for(var i = 0; i < this.blockMoving.cells.length; i++){
+                var cell = this.blockMoving.cells[i];
+                this.gridMoving[cell.x / this.wCell][cell.y / this.wCell] = null;
+            }
+            for(var i = 0; i < this.blockMoving.cells.length; i++){
+                var cell = this.blockMoving.cells[i];
+                cell.y += cell.w;
+                this.gridMoving[cell.x / this.wCell][cell.y / this.wCell] = cell;
+            }
+            return [
+                null,
+                false
+            ];
+        }
+    };
+    GridMoving1.prototype.checkIfRotatable = function(block) {
+        var nextIndexes = block.getNextIndexOfRotate();
+        for(var i = 0; i < nextIndexes.length; i++){
+            var cell = block.cells[i];
+            if (cell.y + cell.w >= height || cell.x * this.wCell < 0 || cell.x * this.wCell >= width || this.gridBlockStopped.grid[cell.x / this.wCell][cell.y / this.wCell] != undefined || this.gridBlockStopped.grid[cell.x / this.wCell][cell.y / this.wCell] != null) return false; //se il blocco sbatte giù || sinistra || destra || ci sono celle dove deve andare ritorna false
+        }
+        return true;
+    };
+    return GridMoving1;
+}();
+exports.GridMoving = GridMoving;
 
 },{}]},["1DDSm","9Rlze"], "9Rlze", "parcelRequire94c2")
 

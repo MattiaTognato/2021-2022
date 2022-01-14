@@ -4,14 +4,12 @@ export class Cell{
     public x:number;
     public y:number;
     public w:number;
-    public block:Block;
     public moving:boolean;
     
     constructor(x:number, y:number, w:number){
         this.x = x*w;
         this.y = y*w;
         this.w = w;
-        this.moving = true;
     }
     show() {
         fill(0);
