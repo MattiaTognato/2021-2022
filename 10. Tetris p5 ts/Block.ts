@@ -3,8 +3,10 @@ import { Cell } from "./Cell";
 export class Block{
     cells:Cell[];
     typeOfBlock:number;
+    rotation:number;
+    rotationShapes:number[][][];
     private _moving:boolean;
-    
+    private wCell;
     get moving():boolean{
         return this._moving;
     }
@@ -18,79 +20,92 @@ export class Block{
     constructor(typeOfBlock:number, spawnX:number, wCell:number){
         this.cells = [];
         this.typeOfBlock = typeOfBlock;
-        switch(typeOfBlock){
+        this.wCell = wCell;
+        switch(this.typeOfBlock){
             case 0:// caso I
-                for(var i = 0; i < 4; i++){
-                    this.cells.push(new Cell(spawnX, i, wCell));
-                }
+                this.rotationShapes = [
+                    [[0, 0], [0, 1], [0, 2], [0, 3]],
+                    [[-1, 1], [0, 1], [1, 1], [2, 1]]
+                ];
+                this.generateBlockFromShape(spawnX);
                 break;
             case 1:// caso J
-                for(var i = 0; i < 3; i++){
-                    this.cells.push(new Cell(spawnX, i, wCell));
-                }
-                this.cells.push(new Cell(spawnX - 1, 2, wCell));
+                this.rotationShapes = [
+                    [[0, 0], [0, 1], [0, 2], [-1, 2]],
+                    [[1, 2], [-1, 1], [0, 1], [1, 1]],
+                    [[1, 0], [0, 0], [0, 1], [0, 2]],
+                    [[-1, 0], [-1, 1], [0, 1], [1, 1]]
+                ];
+                this.generateBlockFromShape(spawnX);
                 break;
             case 2:// caso L
-                for(var i = 0; i < 3; i++){
-                    this.cells.push(new Cell(spawnX, i, wCell));
-                }
-                this.cells.push(new Cell(spawnX + 1, 2, wCell));
+                this.rotationShapes = [
+                [[0, 0], [0, 1], [0, 2], [1, 2]],
+                [[1, 0], [-1, 1], [0, 1], [1, 1]],
+                [[-1, 0], [0, 0], [0, 1], [0, 2]],
+                [[-1, 2], [-1, 1], [0, 1], [1, 1]]
+                ];
+                this.generateBlockFromShape(spawnX);
                 break;
             case 3:// caso S
-                this.cells.push(new Cell(spawnX, 0, wCell));
-                this.cells.push(new Cell(spawnX, 1, wCell));
-                this.cells.push(new Cell(spawnX + 1, 1, wCell));
-                this.cells.push(new Cell(spawnX + 1, 2, wCell));
+                this.rotationShapes = [
+                    [[1, 0], [1, 1], [0, 1], [0, 2]],
+                    [[0, 0], [1, 0], [1, 1], [2, 1]]
+                ];
+                this.generateBlockFromShape(spawnX);
                 break;
             case 4:// caso Z
-                this.cells.push(new Cell(spawnX + 1, 0, wCell));
-                this.cells.push(new Cell(spawnX + 1, 1, wCell));
-                this.cells.push(new Cell(spawnX, 1, wCell));
-                this.cells.push(new Cell(spawnX, 2, wCell));
-                break;
+            this.rotationShapes = [
+                [[0, 0], [0, 1], [1, 1], [1, 2]],
+                [[0, 1], [1, 1], [1, 0], [2, 0]]
+            ];
+            this.generateBlockFromShape(spawnX);
+            break;
             case 5:// caso T
-                this.cells.push(new Cell(spawnX - 1, 0, wCell));
-                this.cells.push(new Cell(spawnX, 0, wCell));
-                this.cells.push(new Cell(spawnX + 1, 0, wCell));
-                this.cells.push(new Cell(spawnX, 1, wCell));
+                this.rotationShapes = [
+                [[-1, 0], [0, 0], [1, 0], [0, 1]],
+                [[0, 0], [0, 1], [0, 2], [1, 1]],
+                [[0, 0], [-1, 1], [0, 1], [1, 1]],
+                [[0, 0], [0, 1], [0, 2], [-1, 1]]
+                ];
+                this.generateBlockFromShape(spawnX);
                 break;
             case 6:// caso O
-                this.cells.push(new Cell(spawnX + 1, 0, wCell));
-                this.cells.push(new Cell(spawnX, 0, wCell));
-                this.cells.push(new Cell(spawnX + 1, 1, wCell));
-                this.cells.push(new Cell(spawnX, 1, wCell));
+                this.rotationShapes = [
+                    [[0, 0], [0, 1], [1, 0], [1, 1]]
+                    ];
+                this.generateBlockFromShape(spawnX);
                 break;
 
         }
         this.moving = true;
     }
-    getNextIndexOfRotate():Cell[]{
-        switch(this.typeOfBlock){
-            case 0:// caso I
-                for(var i = 0; i < this.cells.length; i++){
-
-                }
-                break;
-            case 1:// caso J
-                
-                break;
-            case 2:// caso L
-                
-                break;
-            case 3:// caso S
-                
-                break;
-            case 4:// caso Z
-                
-                break;
-            case 5:// caso T
-                
-                break;
-            case 6:// caso O
-                
-                break;
-
+    generateBlockFromShape(spawnX:number){
+        this.rotation = Math.floor(Math.random()*this.rotationShapes.length);
+        for(var i = 0; i < this.rotationShapes[this.rotation].length; i++){
+            this.cells.push(new Cell(spawnX + this.rotationShapes[this.rotation][i][0], this.rotationShapes[this.rotation][i][1], this.wCell));
         }
-        return new Array<Cell>(1);
+    }
+    getNextIndexOfRotate():Cell[]{
+        var rotatedCells:Cell[] = new Array<Cell>(this.cells.length);
+        this.cells.forEach(val => rotatedCells.push(Object.assign({}, val)));
+        for(var i = 0; i < rotatedCells.length; i++){ //per tutte le celle del blocco
+            rotatedCells[i].x -= this.rotationShapes[this.rotation][i][0]; //sottrai la posizione relativa della cella in modo da avere tutte le celle raccolte in un blocco
+            rotatedCells[i].y -= this.rotationShapes[this.rotation][i][1];
+        }
+
+        if(this.rotation == this.rotationShapes.length - 1){  //se è all'ultima rotazione riparti dalla prima
+            var nextRotation = 0;
+        }
+        else{
+            var nextRotation = this.rotation + 1;
+        }
+
+        for(var i = 0; i < rotatedCells.length; i++){ //per tutte le celle del blocco
+            rotatedCells[i].x += this.rotationShapes[nextRotation][i][0]; //somma gli indici relativi per portare i blocchi alla prossima rotazione
+            rotatedCells[i].y += this.rotationShapes[this.rotation][i][1];
+        }
+
+        return rotatedCells;
     }
 }

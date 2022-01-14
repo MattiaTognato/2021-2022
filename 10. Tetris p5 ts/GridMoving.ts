@@ -130,11 +130,11 @@ export class GridMoving{
     checkIfRotatable(block:Block):boolean{
         var nextIndexes = block.getNextIndexOfRotate();
         for(var i = 0; i < nextIndexes.length; i++){
-            var cell = block.cells[i];
+            var cell = nextIndexes[i];
             if(cell.y + cell.w >= height || cell.x * this.wCell < 0 || cell.x * this.wCell >= width || this.gridBlockStopped.grid[cell.x/this.wCell][cell.y/this.wCell] != undefined || this.gridBlockStopped.grid[cell.x/this.wCell][cell.y/this.wCell] != null){
                 return false;//se il blocco sbatte giù || sinistra || destra || ci sono celle dove deve andare ritorna false
             }
         }
-        return true;
+        return true;//se esce dal for tutte le celle sono ruotabili quindi ritorno true
     }
 }

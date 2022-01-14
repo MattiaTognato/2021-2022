@@ -81,4 +81,7 @@ function moveDown(){
     if(key == "ArrowRight"){
         keyProgressionLR = 0;
     }
+    if(key == "ArrowUp"){
+        console.log(gridMoving.checkIfRotatable(gridMoving.blockMoving));
+    }
 }
