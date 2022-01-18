@@ -575,6 +575,7 @@ globalThis.draw = function() {
             timerDown = millis();
         }
     }
+    background(33, 66, 115);
     grid.show();
     gridMoving.show();
 };
@@ -583,12 +584,16 @@ function moveDown() {
     if (stoppedBlockAndCreateBlock[1] == true && stoppedBlockAndCreateBlock[0] != undefined && stoppedBlockAndCreateBlock[0] != undefined) {
         grid.addBlock(stoppedBlockAndCreateBlock[0]); // aggiungo il blocco che si è fermato alla griglia dei blocchi fermi
         gridMoving.addBlock(new Block_1.Block(Math.floor(Math.random() * 7), width / 2 / wCell, wCell)); //aggiungo un nuovo blocco in movimento
+        var fullLinesIndexes = grid.checkFullLines();
+        if (fullLinesIndexes.length > 0) grid.deleteLines(fullLinesIndexes);
     } else if (stoppedBlockAndCreateBlock[1] == true) gridMoving.addBlock(new Block_1.Block(Math.floor(Math.random() * 7), width / 2 / wCell, wCell)); //aggiungo un blocco in movimento in caso non ce ne siano
 }
+globalThis.keyPressed = function() {
+    if (key == "ArrowUp") gridMoving.rotateBlock();
+};
 globalThis.keyReleased = function() {
     if (key == "ArrowLeft") keyProgressionLR = 0;
     if (key == "ArrowRight") keyProgressionLR = 0;
-    if (key == "ArrowUp") console.log(gridMoving.checkIfRotatable(gridMoving.blockMoving));
 };
 
 },{"./Block":"ecSgA","./grid":"l3V1X","./gridMoving":"b9kLz"}],"ecSgA":[function(require,module,exports) {
@@ -1000,22 +1005,32 @@ var Block = function() {
         for(var i = 0; i < this.rotationShapes[this.rotation].length; i++)this.cells.push(new Cell_1.Cell(spawnX + this.rotationShapes[this.rotation][i][0], this.rotationShapes[this.rotation][i][1], this.wCell));
     };
     Block1.prototype.getNextIndexOfRotate = function() {
-        var rotatedCells = new Array(this.cells.length);
+        var rotatedCells = [];
         this.cells.forEach(function(val) {
             return rotatedCells.push(Object.assign({
             }, val));
         });
         for(var i = 0; i < rotatedCells.length; i++){
-            rotatedCells[i].x -= this.rotationShapes[this.rotation][i][0]; //sottrai la posizione relativa della cella in modo da avere tutte le celle raccolte in un blocco
-            rotatedCells[i].y -= this.rotationShapes[this.rotation][i][1];
+            rotatedCells[i].x -= this.rotationShapes[this.rotation][i][0] * this.wCell; //sottrai la posizione relativa della cella in modo da avere tutte le celle raccolte in un blocco
+            rotatedCells[i].y -= this.rotationShapes[this.rotation][i][1] * this.wCell;
         }
         if (this.rotation == this.rotationShapes.length - 1) var nextRotation = 0;
         else var nextRotation = this.rotation + 1;
         for(var i = 0; i < rotatedCells.length; i++){
-            rotatedCells[i].x += this.rotationShapes[nextRotation][i][0]; //somma gli indici relativi per portare i blocchi alla prossima rotazione
-            rotatedCells[i].y += this.rotationShapes[this.rotation][i][1];
+            rotatedCells[i].x += this.rotationShapes[nextRotation][i][0] * this.wCell; //somma gli indici relativi per portare i blocchi alla prossima rotazione
+            rotatedCells[i].y += this.rotationShapes[nextRotation][i][1] * this.wCell;
         }
         return rotatedCells;
+    };
+    Block1.prototype.rotate = function() {
+        var rotatedCells = this.getNextIndexOfRotate();
+        for(var i = 0; i < this.cells.length; i++){
+            this.cells[i].x = rotatedCells[i].x;
+            this.cells[i].y = rotatedCells[i].y;
+        }
+        if (this.rotation == this.rotationShapes.length - 1) var nextRotation = 0;
+        else var nextRotation = this.rotation + 1;
+        this.rotation = nextRotation;
     };
     return Block1;
 }();
@@ -1057,11 +1072,8 @@ var Grid = function() {
     }
     Grid1.prototype.show = function() {
         for(var i = 0; i < this.row; i++){
-            for(var j = 0; j < this.col; j++)if (this.grid[i][j] != undefined && this.grid[i][j] != null) {
-                noStroke();
-                fill(54, 117, 106);
-                rect(i * this.wCell, j * this.wCell, this.wCell, this.wCell); //se c'è un blocco fermo disegnalo
-            } else {
+            for(var j = 0; j < this.col; j++)if (this.grid[i][j] != undefined && this.grid[i][j] != null) this.grid[i][j].show();
+            else {
                 stroke(148, 140, 117);
                 noFill();
                 strokeWeight(1);
@@ -1074,6 +1086,34 @@ var Grid = function() {
             var cell = block.cells[i];
             this.grid[cell.x / this.wCell][cell.y / this.wCell] = cell;
         }
+    };
+    Grid1.prototype.checkFullLines = function() {
+        var fullLines = [];
+        for(var i = 0; i < this.col; i++)for(var j = 0; j < this.row; j++){
+            if (this.grid[j][i] == undefined || this.grid[j][i] == null) break; //passa alla colonna successiva
+            else if (j == this.row - 1) fullLines.push(i); //mette l'indice della cella piena (da eliminare) dentro l'array
+        }
+        return fullLines; //ritorno l'indice delle righe da eliminare
+    };
+    Grid1.prototype.deleteLines = function(lineIndexes) {
+        for(var j = 0; j < lineIndexes.length; j++)for(var i = 0; i < this.row; i++)this.grid[i][lineIndexes[j]] = null;
+        for(var k = 0; k < lineIndexes.length; k++){
+            for(var i = 0; i < lineIndexes[k]; i++)for(var j = 0; j < this.row; j++){
+                if (this.grid[j][i] == undefined || this.grid[j][i] == null) continue; //passa alla cella dopo
+                else this.grid[j][i].y += this.wCell;
+            }
+        }
+        this.refreshCellPosition();
+    };
+    Grid1.prototype.refreshCellPosition = function() {
+        var cellsInGrid = [];
+        for(var i = 0; i < this.row; i++){
+            for(var j = 0; j < this.col; j++)if (this.grid[i][j] != undefined && this.grid[i][j] != null) {
+                cellsInGrid.push(this.grid[i][j]);
+                this.grid[i][j] = null;
+            }
+        }
+        for(var i = 0; i < cellsInGrid.length; i++)this.grid[cellsInGrid[i].x / this.wCell][cellsInGrid[i].y / this.wCell] = cellsInGrid[i];
     };
     return Grid1;
 }();
@@ -1128,6 +1168,10 @@ var GridMoving = function() {
         } else {
             this.blockMoving.moving = false;
             var tmp = this.blockMoving;
+            for(var i = 0; i < this.blockMoving.cells.length; i++){
+                var cell = this.blockMoving.cells[i];
+                this.gridMoving[cell.x / this.wCell][cell.y / this.wCell] = null;
+            }
             this.blockMoving = null;
             return [
                 tmp,
@@ -1174,27 +1218,13 @@ var GridMoving = function() {
     };
     GridMoving1.prototype.rotateBlock = function() {
         if (this.blockMoving == undefined || this.blockMoving == null) return;
-        if (this.checkIfRotatable(this.blockMoving)) {
-            for(var i = 0; i < this.blockMoving.cells.length; i++){
-                var cell = this.blockMoving.cells[i];
-                this.gridMoving[cell.x / this.wCell][cell.y / this.wCell] = null;
-            }
-            for(var i = 0; i < this.blockMoving.cells.length; i++){
-                var cell = this.blockMoving.cells[i];
-                cell.y += cell.w;
-                this.gridMoving[cell.x / this.wCell][cell.y / this.wCell] = cell;
-            }
-            return [
-                null,
-                false
-            ];
-        }
+        if (this.checkIfRotatable(this.blockMoving)) this.blockMoving.rotate();
     };
     GridMoving1.prototype.checkIfRotatable = function(block) {
         var nextIndexes = block.getNextIndexOfRotate();
         for(var i = 0; i < nextIndexes.length; i++){
             var cell = nextIndexes[i];
-            if (cell.y + cell.w >= height || cell.x * this.wCell < 0 || cell.x * this.wCell >= width || this.gridBlockStopped.grid[cell.x / this.wCell][cell.y / this.wCell] != undefined || this.gridBlockStopped.grid[cell.x / this.wCell][cell.y / this.wCell] != null) return false; //se il blocco sbatte giù || sinistra || destra || ci sono celle dove deve andare ritorna false
+            if (cell.y + cell.w >= height || cell.x < 0 || cell.x >= width || this.gridBlockStopped.grid[cell.x / this.wCell][cell.y / this.wCell] != undefined || this.gridBlockStopped.grid[cell.x / this.wCell][cell.y / this.wCell] != null) return false; //se il blocco sbatte giù || sinistra || destra || ci sono celle dove deve andare ritorna false
         }
         return true; //se esce dal for tutte le celle sono ruotabili quindi ritorno true
     };

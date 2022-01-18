@@ -56,6 +56,10 @@ export class GridMoving{
         else{
             this.blockMoving.moving = false;
             var tmp = this.blockMoving;
+            for(var i = 0; i < this.blockMoving.cells.length; i++){
+                var cell = this.blockMoving.cells[i];
+                this.gridMoving[cell.x/this.wCell][cell.y/this.wCell] = null;
+            }
             this.blockMoving = null;
             return [tmp, true];
         }
@@ -115,23 +119,14 @@ export class GridMoving{
             return;
         }
         if(this.checkIfRotatable(this.blockMoving)){
-            for(var i = 0; i < this.blockMoving.cells.length; i++){
-                var cell = this.blockMoving.cells[i];
-                this.gridMoving[cell.x/this.wCell][cell.y/this.wCell] = null;
-            }
-            for(var i = 0; i < this.blockMoving.cells.length; i++){
-                var cell = this.blockMoving.cells[i];
-                cell.y += cell.w;
-                this.gridMoving[cell.x/this.wCell][cell.y/this.wCell] = cell;
-            }           
-            return[null, false];
+            this.blockMoving.rotate();
         }
     }
     checkIfRotatable(block:Block):boolean{
         var nextIndexes = block.getNextIndexOfRotate();
         for(var i = 0; i < nextIndexes.length; i++){
             var cell = nextIndexes[i];
-            if(cell.y + cell.w >= height || cell.x * this.wCell < 0 || cell.x * this.wCell >= width || this.gridBlockStopped.grid[cell.x/this.wCell][cell.y/this.wCell] != undefined || this.gridBlockStopped.grid[cell.x/this.wCell][cell.y/this.wCell] != null){
+            if(cell.y + cell.w >= height || cell.x < 0 || cell.x >= width || this.gridBlockStopped.grid[cell.x/this.wCell][cell.y/this.wCell] != undefined || this.gridBlockStopped.grid[cell.x/this.wCell][cell.y/this.wCell] != null){
                 return false;//se il blocco sbatte giù || sinistra || destra || ci sono celle dove deve andare ritorna false
             }
         }

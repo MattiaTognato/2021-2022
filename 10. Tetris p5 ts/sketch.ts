@@ -60,7 +60,7 @@ var keyProgressionLR = 0;
             timerDown = millis();
         }
     }
-
+    background(33, 66, 115);
     grid.show();
     gridMoving.show();
 };
@@ -69,11 +69,22 @@ function moveDown(){
     if(stoppedBlockAndCreateBlock[1] as boolean == true && stoppedBlockAndCreateBlock[0] as Block != undefined && stoppedBlockAndCreateBlock[0] as Block != undefined){//caso in cui un blocco si è fermato
         grid.addBlock(stoppedBlockAndCreateBlock[0] as Block);  // aggiungo il blocco che si è fermato alla griglia dei blocchi fermi
         gridMoving.addBlock(new Block(Math.floor(Math.random() * 7), (width/2)/wCell, wCell));  //aggiungo un nuovo blocco in movimento
+        var fullLinesIndexes = grid.checkFullLines();
+        if(fullLinesIndexes.length > 0){ //se ci sono righe piene
+            grid.deleteLines(fullLinesIndexes);
+        }
     }
-    else if(stoppedBlockAndCreateBlock[1] as boolean == true){
+    else if(stoppedBlockAndCreateBlock[1] as boolean == true){ //per qualche motivo non ci sono blocchi
         gridMoving.addBlock(new Block(Math.floor(Math.random() * 7), (width/2)/wCell, wCell)); //aggiungo un blocco in movimento in caso non ce ne siano
     }
 }
+
+(globalThis as any).keyPressed = function(){
+    if(key == "ArrowUp"){
+        gridMoving.rotateBlock();
+    }
+};
+
 (globalThis as any).keyReleased = function(){
     if(key == "ArrowLeft"){
         keyProgressionLR = 0;
@@ -81,7 +92,4 @@ function moveDown(){
     if(key == "ArrowRight"){
         keyProgressionLR = 0;
     }
-    if(key == "ArrowUp"){
-        console.log(gridMoving.checkIfRotatable(gridMoving.blockMoving));
-    }
-}
+};

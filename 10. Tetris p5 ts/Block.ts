@@ -87,13 +87,12 @@ export class Block{
         }
     }
     getNextIndexOfRotate():Cell[]{
-        var rotatedCells:Cell[] = new Array<Cell>(this.cells.length);
+        var rotatedCells:Cell[] = [];
         this.cells.forEach(val => rotatedCells.push(Object.assign({}, val)));
         for(var i = 0; i < rotatedCells.length; i++){ //per tutte le celle del blocco
-            rotatedCells[i].x -= this.rotationShapes[this.rotation][i][0]; //sottrai la posizione relativa della cella in modo da avere tutte le celle raccolte in un blocco
-            rotatedCells[i].y -= this.rotationShapes[this.rotation][i][1];
+            rotatedCells[i].x -= (this.rotationShapes[this.rotation][i][0])*this.wCell; //sottrai la posizione relativa della cella in modo da avere tutte le celle raccolte in un blocco
+            rotatedCells[i].y -= (this.rotationShapes[this.rotation][i][1])*this.wCell;
         }
-
         if(this.rotation == this.rotationShapes.length - 1){  //se è all'ultima rotazione riparti dalla prima
             var nextRotation = 0;
         }
@@ -102,10 +101,24 @@ export class Block{
         }
 
         for(var i = 0; i < rotatedCells.length; i++){ //per tutte le celle del blocco
-            rotatedCells[i].x += this.rotationShapes[nextRotation][i][0]; //somma gli indici relativi per portare i blocchi alla prossima rotazione
-            rotatedCells[i].y += this.rotationShapes[this.rotation][i][1];
+            rotatedCells[i].x += (this.rotationShapes[nextRotation][i][0])*this.wCell; //somma gli indici relativi per portare i blocchi alla prossima rotazione
+            rotatedCells[i].y += (this.rotationShapes[nextRotation][i][1])*this.wCell;
         }
 
         return rotatedCells;
+    }
+    rotate(){
+        var rotatedCells = this.getNextIndexOfRotate();
+        for(var i = 0; i < this.cells.length; i++){
+            this.cells[i].x = rotatedCells[i].x;
+            this.cells[i].y = rotatedCells[i].y;
+        }
+        if(this.rotation == this.rotationShapes.length - 1){  //se è all'ultima rotazione riparti dalla prima
+            var nextRotation = 0;
+        }
+        else{
+            var nextRotation = this.rotation + 1;
+        }
+        this.rotation = nextRotation;
     }
 }
