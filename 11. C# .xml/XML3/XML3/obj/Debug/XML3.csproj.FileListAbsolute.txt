@@ -1,0 +1,6 @@
+C:\Users\6190097\source\repos\XML3\XML3\bin\Debug\XML3.exe.config
+C:\Users\6190097\source\repos\XML3\XML3\bin\Debug\XML3.exe
+C:\Users\6190097\source\repos\XML3\XML3\bin\Debug\XML3.pdb
+C:\Users\6190097\source\repos\XML3\XML3\obj\Debug\XML3.csproj.CoreCompileInputs.cache
+C:\Users\6190097\source\repos\XML3\XML3\obj\Debug\XML3.exe
+C:\Users\6190097\source\repos\XML3\XML3\obj\Debug\XML3.pdb

@@ -1,0 +1,6 @@
+C:\Users\6190097\source\repos\XML2\XML2\bin\Debug\XML2.exe.config
+C:\Users\6190097\source\repos\XML2\XML2\bin\Debug\XML2.exe
+C:\Users\6190097\source\repos\XML2\XML2\bin\Debug\XML2.pdb
+C:\Users\6190097\source\repos\XML2\XML2\obj\Debug\XML2.csproj.CoreCompileInputs.cache
+C:\Users\6190097\source\repos\XML2\XML2\obj\Debug\XML2.exe
+C:\Users\6190097\source\repos\XML2\XML2\obj\Debug\XML2.pdb

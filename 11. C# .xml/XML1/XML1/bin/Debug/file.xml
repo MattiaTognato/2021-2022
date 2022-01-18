@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Commento di prova-->
+<!--file inserito nella directory dell'eseguibile-->
+<Studente>
+  <Persona1>
+    <Nome>Antonella</Nome>
+    <Indirizzo>Vicenza</Indirizzo>
+  </Persona1>
+  <Persona2>
+    <Nome>Pietro</Nome>
+    <Indirizzo>Cavazzale</Indirizzo>
+  </Persona2>
+  <Char>arc</Char>
+</Studente>

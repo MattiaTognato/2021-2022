@@ -1,0 +1,7 @@
+C:\Users\6190097\source\repos\XML4\XML4\bin\Debug\XML4.exe.config
+C:\Users\6190097\source\repos\XML4\XML4\bin\Debug\XML4.exe
+C:\Users\6190097\source\repos\XML4\XML4\bin\Debug\XML4.pdb
+C:\Users\6190097\source\repos\XML4\XML4\obj\Debug\XML4.csprojAssemblyReference.cache
+C:\Users\6190097\source\repos\XML4\XML4\obj\Debug\XML4.csproj.CoreCompileInputs.cache
+C:\Users\6190097\source\repos\XML4\XML4\obj\Debug\XML4.exe
+C:\Users\6190097\source\repos\XML4\XML4\obj\Debug\XML4.pdb

@@ -1,0 +1,7 @@
+C:\Users\6190097\source\repos\XML1\XML1\bin\Debug\XML1.exe.config
+C:\Users\6190097\source\repos\XML1\XML1\bin\Debug\XML1.exe
+C:\Users\6190097\source\repos\XML1\XML1\bin\Debug\XML1.pdb
+C:\Users\6190097\source\repos\XML1\XML1\obj\Debug\XML1.csprojAssemblyReference.cache
+C:\Users\6190097\source\repos\XML1\XML1\obj\Debug\XML1.csproj.CoreCompileInputs.cache
+C:\Users\6190097\source\repos\XML1\XML1\obj\Debug\XML1.exe
+C:\Users\6190097\source\repos\XML1\XML1\obj\Debug\XML1.pdb

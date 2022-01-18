@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Students>
+  <Student>
+    <Nome>Olivia</Nome>
+    <Paese>Vicenza</Paese>
+  </Student>
+  <Student>
+    <Nome>Laura</Nome>
+    <Paese>Padova</Paese>
+  </Student>
+  <Student>
+    <Nome>Martina</Nome>
+    <Paese>Venezia</Paese>
+  </Student>
+  <Student>
+    <Nome>Paolo</Nome>
+    <Paese>Trento</Paese>
+  </Student>
+  <Student>
+    <Nome>Monica</Nome>
+    <Paese>Verona</Paese>
+  </Student>
+</Students>
