@@ -1,0 +1,32 @@
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.csprojAssemblyReference.cache
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo_Minato_2._0.finestra.resources
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo_Minato_2._0.Properties.Resources.resources
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.csproj.GenerateResource.cache
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.AssemblyInfoInputs.cache
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.AssemblyInfo.cs
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.csproj.CoreCompileInputs.cache
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.exe
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.deps.json
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.runtimeconfig.json
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.runtimeconfig.dev.json
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.dll
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.pdb
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.dll
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.pdb
+C:\Users\matti\source\repos\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.genruntimeconfig.cache
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.exe
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.deps.json
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.runtimeconfig.json
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.runtimeconfig.dev.json
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.dll
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\bin\Debug\netcoreapp3.1\Campo Minato 2.0.pdb
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.csproj.AssemblyReference.cache
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo_Minato_2._0.finestra.resources
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo_Minato_2._0.Properties.Resources.resources
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.csproj.GenerateResource.cache
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.AssemblyInfoInputs.cache
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.AssemblyInfo.cs
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.csproj.CoreCompileInputs.cache
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.dll
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.pdb
+C:\Users\6190097\Downloads\Campo Minato 2.0\Campo Minato 2.0\Campo Minato 2.0\obj\Debug\netcoreapp3.1\Campo Minato 2.0.genruntimeconfig.cache

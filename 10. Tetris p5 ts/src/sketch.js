@@ -12,17 +12,18 @@ var timerAuto = 0;
 var timerLR = 0;
 var timerDown = 0;
 var keyProgressionLR = 0;
+var score = 0;
 globalThis.setup = function () {
     createCanvas(row * wCell, col * wCell);
     grid = new grid_1.Grid(col, row, wCell);
     gridMoving = new GridMoving_1.GridMoving(grid, col, row, wCell);
     gridMoving.addBlock(new Block_1.Block(Math.floor(Math.random() * 7), (width / 2) / wCell, wCell));
-    background(33, 66, 115);
+    background(41, 16, 69);
     grid.show();
     gridMoving.show();
 };
 globalThis.draw = function () {
-    background(33, 66, 115);
+    background(41, 16, 69);
     if (millis() >= 1000 + timerAuto) {
         moveDown(); //Ogni secondo sposta il blocchetto in giù
         timerAuto = millis();
@@ -55,7 +56,6 @@ globalThis.draw = function () {
             timerDown = millis();
         }
     }
-    background(33, 66, 115);
     grid.show();
     gridMoving.show();
 };
@@ -67,10 +67,28 @@ function moveDown() {
         var fullLinesIndexes = grid.checkFullLines();
         if (fullLinesIndexes.length > 0) { //se ci sono righe piene
             grid.deleteLines(fullLinesIndexes);
+            calcScore(fullLinesIndexes.length);
+            console.log(score);
         }
     }
     else if (stoppedBlockAndCreateBlock[1] == true) { //per qualche motivo non ci sono blocchi
         gridMoving.addBlock(new Block_1.Block(Math.floor(Math.random() * 7), (width / 2) / wCell, wCell)); //aggiungo un blocco in movimento in caso non ce ne siano
+    }
+}
+function calcScore(n) {
+    switch (n) {
+        case 1:
+            score += 40 * (n + 1);
+            break;
+        case 2:
+            score += 100 * (n + 1);
+            break;
+        case 3:
+            score += 300 * (n + 1);
+            break;
+        case 4:
+            score += 1200 * (n + 1);
+            break;
     }
 }
 globalThis.keyPressed = function () {

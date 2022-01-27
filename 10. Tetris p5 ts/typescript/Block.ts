@@ -125,9 +125,9 @@ export class Block{
     }
 }
 enum Colors{
-    teal = "27, 196, 129",
-    blue = "22, 9, 156",
-    violet = "145, 16, 130",
-    green = "55, 138, 11",
+    color1 = "92, 250, 255",
+    blue = "255, 61, 155",
+    violet = "122, 0, 184",
+    green = "4, 212, 46",
 
 }

@@ -119,9 +119,9 @@ class Block {
 exports.Block = Block;
 var Colors;
 (function (Colors) {
-    Colors["teal"] = "27, 196, 129";
-    Colors["blue"] = "22, 9, 156";
-    Colors["violet"] = "145, 16, 130";
-    Colors["green"] = "55, 138, 11";
+    Colors["color1"] = "92, 250, 255";
+    Colors["blue"] = "255, 61, 155";
+    Colors["violet"] = "122, 0, 184";
+    Colors["green"] = "4, 212, 46";
 })(Colors || (Colors = {}));
 //# sourceMappingURL=Block.js.map

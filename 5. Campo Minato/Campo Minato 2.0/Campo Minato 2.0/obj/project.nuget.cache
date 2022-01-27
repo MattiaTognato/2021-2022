@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "xK5FAahq1Lp6ITs7XArxKve2IdrJfd0EmQNzcBDgy+ky1CPcX4EqNJbKhtdDUMgWProTigUIrk3xwUpo1e6kUw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\matti\\OneDrive\\Documenti\\Scuola\\informatica\\2021-2022\\5. Campo Minato\\Campo Minato 2.0\\Campo Minato 2.0\\Campo Minato 3.0.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\matti\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.21\\microsoft.netcore.app.host.win-x64.3.1.21.nupkg.sha512",
+    "C:\\Users\\matti\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\matti\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\matti\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
