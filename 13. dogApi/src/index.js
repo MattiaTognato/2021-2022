@@ -16,8 +16,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         for (var razza in razze.message) {
             select.options[select.options.length] = new Option(razza);
         }
+        cambioDoggo();
     });
 }());
 function cambioDoggo() {
+    getDogsImg().then((images) => {
+        for (let i = 0; i < 5; i++) {
+            var imgElement = document.getElementById("img" + i);
+            imgElement.src = images[Math.floor(Math.random() * (images.length - 1))];
+        }
+    });
+}
+function getDogsImg() {
+    return __awaiter(this, void 0, void 0, function* () {
+        var select = document.getElementById('dogList');
+        var dogName = select.options[select.selectedIndex].value;
+        var res = yield fetch("https://dog.ceo/api/breed/" + dogName + "/images");
+        var images = yield res.json();
+        return images.message;
+    });
 }
 //# sourceMappingURL=index.js.map
