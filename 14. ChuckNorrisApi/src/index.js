@@ -13,18 +13,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         var res = yield fetch("https://api.chucknorris.io/jokes/categories");
         var categories = yield res.json();
         var select = document.getElementById("categories");
-        console.log(categories);
         for (var cat in categories) {
             select.options[select.options.length] = new Option(categories[cat]);
         }
+        cambioJoke();
     });
 }());
-function cambioDoggo() {
-    getDogsImg().then((joke) => {
-        console.log(joke);
+function cambioJoke() {
+    var p = document.getElementById("pJoke");
+    var h4 = document.getElementById("categorieName");
+    getJoke().then((joke) => {
+        p.innerHTML = joke.value;
+        h4.innerHTML = joke.categories[0];
     });
 }
-function getDogsImg() {
+function getJoke() {
     return __awaiter(this, void 0, void 0, function* () {
         var select = document.getElementById('categories');
         var category = select.options[select.selectedIndex].value;

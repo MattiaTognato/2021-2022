@@ -1,11 +1,15 @@
 <html>
     <head>
-        <title></title>
+        <title>Chuck Norris Api</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div>
-            <select id="categories"></select>
-
+        <div class="container">
+            <select id="categories" onchange="cambioJoke()"></select>
+            <div>
+                <h4 id="categorieName"></h5>
+                <p id="pJoke" class="joke-container"></p>
+            </div>
         </div>
         <script src="./src/index.js"></script>
     </body>
