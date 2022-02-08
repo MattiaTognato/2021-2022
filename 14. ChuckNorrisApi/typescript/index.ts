@@ -9,13 +9,12 @@
 }())
 
 function cambioJoke(){
-    var p : HTMLParagraphElement = document.getElementById("pJoke") as HTMLParagraphElement;
-    var h4 : HTMLParagraphElement= document.getElementById("categorieName") as HTMLParagraphElement;
+    var divJokes : HTMLDivElement = document.getElementById("jokes-container") as HTMLDivElement;
     
     getJoke().then(
         (joke) =>{
-            p.innerHTML = joke.value;
-            h4.innerHTML = joke.categories[0];
+            let divSingleJoke:string = `<div><h4>${joke.categories[0]}</h4><p class="joke-container">${joke.value}</p></div>`;
+            divJokes.innerHTML = divSingleJoke + divJokes.innerHTML;
         }
     );
 }

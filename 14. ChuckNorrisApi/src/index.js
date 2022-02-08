@@ -20,11 +20,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 }());
 function cambioJoke() {
-    var p = document.getElementById("pJoke");
-    var h4 = document.getElementById("categorieName");
+    var divJokes = document.getElementById("jokes-container");
     getJoke().then((joke) => {
-        p.innerHTML = joke.value;
-        h4.innerHTML = joke.categories[0];
+        let divSingleJoke = `<div><h4>${joke.categories[0]}</h4><p class="joke-container">${joke.value}</p></div>`;
+        divJokes.innerHTML = divSingleJoke + divJokes.innerHTML;
     });
 }
 function getJoke() {
