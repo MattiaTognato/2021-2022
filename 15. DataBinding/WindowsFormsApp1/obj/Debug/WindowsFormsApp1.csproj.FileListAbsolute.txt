@@ -1,0 +1,10 @@
+C:\Users\6190097\Documents\GitHub\2021-2022\15. DataBinding\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\6190097\Documents\GitHub\2021-2022\15. DataBinding\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\6190097\Documents\GitHub\2021-2022\15. DataBinding\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\6190097\Documents\GitHub\2021-2022\15. DataBinding\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\6190097\Documents\GitHub\2021-2022\15. DataBinding\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\6190097\Documents\GitHub\2021-2022\15. DataBinding\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\6190097\Documents\GitHub\2021-2022\15. DataBinding\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\6190097\Documents\GitHub\2021-2022\15. DataBinding\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\6190097\Documents\GitHub\2021-2022\15. DataBinding\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\6190097\Documents\GitHub\2021-2022\15. DataBinding\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
