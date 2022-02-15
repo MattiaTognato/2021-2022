@@ -26,12 +26,13 @@ namespace WindowsFormsApp1
             bind.DataSource = ListaPersone;
             cmbLista.DataSource = bind;
             cmbLista.DisplayMember = "Cognome";
+            comboBox2.DataSource = bind;
+            comboBox2.DisplayMember = "NomeCompleto";
 
-            Binding bindTextBox = new Binding("Text", textInput, "Text");// bind text box ad una text box
-            textOutput.DataBindings.Add(bindTextBox);
-
-            Binding bindLabel = new Binding("Text", textInput, "Text");// bind label ad una textbox
-            labelOutput.DataBindings.Add(bindLabel);
+            textboxId.DataBindings.Add("Text", bind, "Id");
+            textOutput.DataBindings.Add("Text", textInput, "Text");
+            labelOutput.DataBindings.Add("Text", textInput, "Text");
+            textBoxFormSize.DataBindings.Add("Text", this, "Size");
         }
 
     }

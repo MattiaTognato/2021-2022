@@ -12,6 +12,7 @@
             Id = id;
             Nome = nome;
             Cognome = cognome;
+            NomeCompleto = Nome + " " + Cognome;
         }
     }
 }

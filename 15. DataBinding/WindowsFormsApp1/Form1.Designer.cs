@@ -33,13 +33,10 @@ namespace WindowsFormsApp1
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textInput = new System.Windows.Forms.TextBox();
             this.textOutput = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxFormSize = new System.Windows.Forms.TextBox();
+            this.textboxId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.labelOutput = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -58,7 +55,6 @@ namespace WindowsFormsApp1
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 0;
-            this.comboBox2.Text = "x";
             // 
             // textInput
             // 
@@ -74,64 +70,37 @@ namespace WindowsFormsApp1
             this.textOutput.Size = new System.Drawing.Size(100, 20);
             this.textOutput.TabIndex = 1;
             // 
-            // textBox4
+            // textBoxFormSize
             // 
-            this.textBox4.Location = new System.Drawing.Point(318, 177);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 1;
+            this.textBoxFormSize.Location = new System.Drawing.Point(318, 177);
+            this.textBoxFormSize.Name = "textBoxFormSize";
+            this.textBoxFormSize.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFormSize.TabIndex = 1;
             // 
-            // textBox5
+            // textboxId
             // 
-            this.textBox5.Location = new System.Drawing.Point(318, 126);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 1;
+            this.textboxId.Location = new System.Drawing.Point(318, 126);
+            this.textboxId.Name = "textboxId";
+            this.textboxId.Size = new System.Drawing.Size(100, 20);
+            this.textboxId.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(84, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(445, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label1";
+            this.label1.Text = "Cognome Persona";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(315, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(134, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "label1";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(315, 155);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "label1";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(84, 126);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "label1";
+            this.label3.Text = "Cognome e Nome Persona";
             // 
             // labelOutput
             // 
@@ -148,13 +117,10 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelOutput);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textboxId);
+            this.Controls.Add(this.textBoxFormSize);
             this.Controls.Add(this.textOutput);
             this.Controls.Add(this.textInput);
             this.Controls.Add(this.comboBox2);
@@ -172,13 +138,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textInput;
         private System.Windows.Forms.TextBox textOutput;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxFormSize;
+        private System.Windows.Forms.TextBox textboxId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelOutput;
     }
 }
