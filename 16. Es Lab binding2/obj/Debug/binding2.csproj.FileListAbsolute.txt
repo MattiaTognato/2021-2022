@@ -1,0 +1,24 @@
+C:\Users\6190097\source\repos\binding2\bin\Debug\binding2.exe.config
+C:\Users\6190097\source\repos\binding2\bin\Debug\binding2.exe
+C:\Users\6190097\source\repos\binding2\bin\Debug\binding2.pdb
+C:\Users\6190097\source\repos\binding2\obj\Debug\binding2.csproj.AssemblyReference.cache
+C:\Users\6190097\source\repos\binding2\obj\Debug\binding2.Form1.resources
+C:\Users\6190097\source\repos\binding2\obj\Debug\binding2.Properties.Resources.resources
+C:\Users\6190097\source\repos\binding2\obj\Debug\binding2.csproj.GenerateResource.cache
+C:\Users\6190097\source\repos\binding2\obj\Debug\binding2.csproj.CoreCompileInputs.cache
+C:\Users\6190097\source\repos\binding2\obj\Debug\binding2.exe
+C:\Users\6190097\source\repos\binding2\obj\Debug\binding2.pdb
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\bin\Debug\binding2.exe.config
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\bin\Debug\binding2.exe
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\bin\Debug\binding2.pdb
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\obj\Debug\binding2.csproj.AssemblyReference.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\obj\Debug\binding2.csproj.SuggestedBindingRedirects.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\obj\Debug\binding2.Form1.resources
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\obj\Debug\binding2.Properties.Resources.resources
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\obj\Debug\binding2.csproj.GenerateResource.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\obj\Debug\binding2.csproj.CoreCompileInputs.cache
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\obj\Debug\binding2.exe
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\obj\Debug\binding2.pdb
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\matti\OneDrive\Documenti\Scuola\informatica\2021-2022\16. Es Lab binding2\obj\Debug\binding2.csproj.CopyComplete
